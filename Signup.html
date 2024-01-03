@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Signup</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="container">
+  <form id="signupForm">
+    <h1>Signup</h1>
+
+    <div class="form--element">
+      <label class="form--label" for="username">Username</label><br />
+      <input
+        class="form--input"
+        type="text"
+        id="username"
+        name="username"
+        aria-label="Username"
+      />
+      <div id="usernameError" class="error-message" aria-live="polite"></div>
+    </div>
+
+    <div class="form--element">
+      <label class="form--label" for="email">Email</label><br />
+      <input
+        class="form--input"
+        type="text"
+        id="email"
+        name="email"
+        aria-label="Email"
+      />
+      <div id="emailError" class="error-message" aria-live="polite"></div>
+    </div>
+
+    <div class="form--element">
+      <label class="form--label" for="password">Password</label><br />
+      <input
+        class="form--input"
+        type="password"
+        id="password"
+        name="password"
+        aria-label="Password"
+      />
+      <div id="passwordError" class="error-message" aria-live="polite"></div>
+    </div>
+
+    <div class="button">
+      <button type="button" onclick="handleSubmit()">Submit</button>
+    </div>
+
+    <div class='last--text'>Already Signed up </div>
+    <br />
+    <a class='link' href="index.html">Login here</a>
+  </form>
+</div>
+
+<script>
+  // Equivalent JavaScript code
+  function validate(values) {
+    const errors = {};
+
+    if (!values.username) {
+      errors.username = 'Username is required';
+    }
+
+    if (!values.email) {
+      errors.email = 'Email is required';
+    }
+
+    if (!values.password) {
+      errors.password = 'Password is required';
+    }
+
+    return errors;
+  }
+
+  function handleChange(e) {
+    const name = e.target.name;
+    const value = e.target.value;
+
+    formValues[name] = value;
+  }
+
+  function handleSubmit() {
+    const formValues = {
+      username: document.getElementById('username').value,
+      email: document.getElementById('email').value,
+      password: document.getElementById('password').value,
+    };
+
+    const formErrors = validate(formValues);
+
+    document.getElementById('usernameError').innerText = formErrors.username || '';
+    document.getElementById('emailError').innerText = formErrors.email || '';
+    document.getElementById('passwordError').innerText = formErrors.password || '';
+
+    if (Object.keys(formErrors).length === 0) {
+      alert('Signup Successful!');
+      // Perform signup logic or API call here
+    }
+  }
+</script>
+
+</body>
+</html>
