@@ -8,6 +8,7 @@ Welcome to the documentation for the login and signup pages of the ProjectName p
 2. Login Page
    
 2.1 Overview
+
 The login page is a crucial component of our application, allowing registered users to securely access their accounts. It provides a straightforward and secure authentication process.
 
 2.2 Features
@@ -21,7 +22,7 @@ To use the login page:
 1) Navigate to the login page.
 2) Enter your username and password.
 3) Click the login button.
-4) Follow any on-screen instructions or error messages.
+
 
 2.4 Screenshots
 ![login](https://github.com/Vivek-singh-23/project1-nexus/assets/155513459/a8dfee21-7b77-4a9a-a146-deba293e7d4e)
